@@ -14,28 +14,30 @@
 
   <body class='bg-[#F3E9D2]'>
     <div>
-      <header class='bg-[#88D498]'>
+      <header class='bg-[#88D498] flex lg:flex-row flex-col justify-between'>
         <h1>
-          <a id='header' href='/homepage'>Find your Future!</a>
+          <a id='header' href='/homepage'>Future Finder!</a>
         </h1>
-        <nav>
+        <nav class='px-7 mt-4'>
           <!-- Conditionally render login or logout links -->
-          <button><span class='material-symbols-rounded'>
+          <button><span class='material-symbols-rounded text-white text-4xl'>
               home
             </span></button>
-          <button><span class='material-symbols-rounded'>
+          <button><span class='material-symbols-rounded text-white text-4xl'>
               search
             </span></button>
-          <button><span class='material-symbols-rounded'>
+          <button><span class='material-symbols-rounded text-white text-4xl'>
               tune
             </span></button>
           {{#if logged_in}}
             <a href='/profile'>profile</a>
             <button class='' id='logout'><span
-                class='material-symbols-rounded'
+                class='material-symbols-rounded text-white text-4xl'
               >logout</span></button>
           {{else}}
-            <a href='/login'><span class='material-symbols-rounded'>
+            <a href='/login'><span
+                class='material-symbols-rounded text-white text-4xl'
+              >
                 login
               </span></a>
           {{/if}}
