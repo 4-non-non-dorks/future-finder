@@ -1,4 +1,8 @@
-header,
+@font-face {
+  font-family: fancy;
+  src: url(./Pacifico-Regular.ttf);
+}
+/* header,
 .project:not(:last-child) {
   border-bottom: 1px solid #ccc;
 }
@@ -22,4 +26,14 @@ header,
   color: #056605;
   font-weight: bold;
   margin-left: -5px;
+} */
+
+#header {
+  font-family: fancy;
+  font-size: 50px;
+  color: #114b5f;
+}
+
+.fancy {
+  font-family: fancy;
 }

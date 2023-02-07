@@ -1,43 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Find your Future!</title>
-  {{!-- <link rel="stylesheet" href="/css/style.css"> --}}
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <title>Find your Future!</title>
+    <link rel='stylesheet' href='/css/style.css' />
+    <link
+      rel='stylesheet'
+      href='https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0'
+    />
+    <script src='https://cdn.tailwindcss.com'></script>
+  </head>
 
-<body class="bg-[#F3E9D2]">
-  <div>
-    <header class="">
-      <h1>
-        <a href="/homepage">Find your Future!</a>
-      </h1>
-      <nav>
-        <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
-        <a href="/profile">profile</a> |
-        <button class="" id="logout">logout</button>
-        {{else}}
-        <a href="/login">login</a>
-        {{/if}}
-      </nav>
-    </header>
-    <main class="">
-      <!-- Render the sub layout -->
-      {{{ body }}}
-    </main>
-    <footer>
-      
-    </footer>
-  </div>
+  <body class='bg-[#F3E9D2]'>
+    <div>
+      <header class='bg-[#88D498]'>
+        <h1>
+          <a id='header' href='/homepage'>Find your Future!</a>
+        </h1>
+        <nav>
+          <!-- Conditionally render login or logout links -->
+          {{#if logged_in}}
+            <a href='/profile'>profile</a>
+            |
+            <button class='' id='logout'><span class='material-symbols-rounded'>
+                logout
+              </span></button>
+          {{else}}
+            <a href='/login'><span class='material-symbols-rounded'>
+                login
+              </span></a>
+          {{/if}}
+        </nav>
+      </header>
+      <main class=''>
+        <!-- Render the sub layout -->
+        {{{body}}}
+      </main>
+      <footer>
 
-  <!-- Render script for logged in users only -->
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
-</body>
+      </footer>
+    </div>
+
+    <!-- Render script for logged in users only -->
+    {{#if logged_in}}
+      <script src='/js/logout.js'></script>
+    {{/if}}
+  </body>
 
 </html>
