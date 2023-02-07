@@ -20,12 +20,20 @@
         </h1>
         <nav>
           <!-- Conditionally render login or logout links -->
+          <button><span class='material-symbols-rounded'>
+              home
+            </span></button>
+          <button><span class='material-symbols-rounded'>
+              search
+            </span></button>
+          <button><span class='material-symbols-rounded'>
+              tune
+            </span></button>
           {{#if logged_in}}
             <a href='/profile'>profile</a>
-            |
-            <button class='' id='logout'><span class='material-symbols-rounded'>
-                logout
-              </span></button>
+            <button class='' id='logout'><span
+                class='material-symbols-rounded'
+              >logout</span></button>
           {{else}}
             <a href='/login'><span class='material-symbols-rounded'>
                 login
