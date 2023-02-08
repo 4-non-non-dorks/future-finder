@@ -13,7 +13,18 @@ router.get('/', async (req, res) => {
         },
       ],
     });
-
+    // Serialize data so the template can read it
+    const jobs = jobData.map((job) => job.get({ plain: true }));
+    console.log(jobs);
+    // Pass serialized data and session flag into template
+    res.render('homepage', {
+      jobs,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 router.get('/jobs/:id', async (req, res) => {
   try {
@@ -37,23 +48,6 @@ router.get('/jobs/:id', async (req, res) => {
   }
 });
 
-
-
-
-    // Serialize data so the template can read it
-    const jobs = jobData.map((job) => job.get({ plain: true }));
-    console.log(jobs);
-    // Pass serialized data and session flag into template
-    res.render('homepage', {
-      jobs,
-      // logged_in: req.session.logged_in,
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-
 router.get('/profile', async (req, res) => {
   try {
     // Find the logged in user based on the session ID
@@ -65,6 +59,24 @@ router.get('/profile', async (req, res) => {
     const user = userData.get({ plain: true });
 
     res.render('profile', {
+      ...user,
+      logged_in: true,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/createjob', async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Job }],
+    });
+
+    const user = userData.get({ plain: true });
+
+    res.render('createjob', {
       ...user,
       logged_in: true,
     });
