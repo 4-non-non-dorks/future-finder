@@ -15,9 +15,15 @@ Job.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    location: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    //TODO: possibly change type to TEXT for more characters
     description: {
       type: DataTypes.STRING,
     },
+    //TODO: change data type to string so commas can be included
     salary: {
       type: DataTypes.INTEGER,
     },

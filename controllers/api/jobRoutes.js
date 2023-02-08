@@ -8,10 +8,11 @@ router.post('/', async (req, res) => {
   try {
     const newJob = await Job.create({
       name: req.body.name,
+      location: req.body.location,
       description: req.body.description,
       salary: req.body.salary,
       benefits: req.body.benefits,
-      user_id: req.body.user_id,
+      user_id: req.session.user_id,
     });
     res.status(200).json(newJob);
   } catch (err) {
@@ -23,6 +24,15 @@ router.get('/', async (req, res) => {
   try {
     const newJob = await Job.findAll();
     res.status(200).json(newJob);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+router.get('/:id', async (req, res) => {
+  try {
+    const jobData = await Job.findByPk(req.params.id, {});
+    res.status(200).json(jobData);
   } catch (err) {
     res.status(400).json(err);
   }
