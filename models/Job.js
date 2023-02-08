@@ -19,13 +19,11 @@ Job.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    //TODO: possibly change type to TEXT for more characters
     description: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
     },
-    //TODO: change data type to string so commas can be included
     salary: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
     },
     benefits: {
       type: DataTypes.STRING,
