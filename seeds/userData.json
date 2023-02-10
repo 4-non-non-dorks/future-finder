@@ -1,17 +1,38 @@
 [
   {
-    "name": "Sal",
-    "email": "sal@hotmail.com",
-    "password": "password12345"
+    "name": "Tony Hicks",
+    "email": "tony@apple.com",
+    "password": "password12345",
+    "company_name": "Apple"
   },
   {
-    "name": "Lernantino",
-    "email": "lernantino@gmail.com",
-    "password": "password12345"
+    "name": "Peter Gregory",
+    "email": "peter@google.com",
+    "password": "password12345",
+    "company_name": "Google"
   },
   {
-    "name": "Amiko",
-    "email": "amiko2k20@aol.com",
-    "password": "password12345"
+    "name": "Ray Holt",
+    "email": "ray@meta.com",
+    "password": "password12345",
+    "company_name": "Meta"
+  },
+  {
+    "name": "Michael Bluth",
+    "email": "michael@twitter.com",
+    "password": "password12345",
+    "company_name": "Twitter"
+  },
+  {
+    "name": "Jet Bartlet",
+    "email": "jet@netflix.com",
+    "password": "password12345",
+    "company_name": "Netflix"
+  },
+  {
+    "name": "Don Draper",
+    "email": "don@microsoft.com",
+    "password": "password12345",
+    "company_name": "Microsoft"
   }
 ]

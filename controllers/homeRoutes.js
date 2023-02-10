@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { Op } = require('sequelize');
 const { Job, User } = require('../models');
 const withAuth = require('../utils/auth');
 
@@ -15,7 +16,32 @@ router.get('/', async (req, res) => {
     });
     // Serialize data so the template can read it
     const jobs = jobData.map((job) => job.get({ plain: true }));
-    console.log(jobs);
+    // Pass serialized data and session flag into template
+    res.render('homepage', {
+      jobs,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/jobs/search/', async (req, res) => {
+  try {
+    // Get all projects and JOIN with user data
+    const jobData = await Job.findAll({
+      where: {
+        name: { [Op.like]: `%${req.query.job}%` },
+      },
+      include: [
+        {
+          model: User,
+          attributes: ['name', 'company_name'],
+        },
+      ],
+    });
+    // Serialize data so the template can read it
+    const jobs = jobData.map((job) => job.get({ plain: true }));
     // Pass serialized data and session flag into template
     res.render('homepage', {
       jobs,

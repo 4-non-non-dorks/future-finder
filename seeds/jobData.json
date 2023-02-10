@@ -1,0 +1,90 @@
+[
+    {
+        "name": "Test Mechanical Engineer",
+        "location": "Chicago, IL",
+        "description": "The PPO-Test team features a collaborative environment with highly creative, inquisitive people developing technologies and solutions to test display and sensing modules for various Apple products and new technologies. Our team features opportunities for individuals to contribute across a wide spectrum of subject areas and product lines. Partnering closely with product design team, and optics, electrical and software engineering to deliver outstanding products and ground breaking technologies! Join us as a Mechanical Engineer owning the design, development and deployment of test systems for touch, sensing and display modules for mass production. The role involves working closely with the product design teams to support the entire gamut of Apple products and new technologies.",
+        "salary": "207000",
+        "benefits": "Comprehensive medical and dental coverage, retirement benefits, range of discounted products and free services, and for formal education related to advance your career at Apple",
+        "user_id": 1
+    },
+    {
+        "name": "Sr. Software Engineer",
+        "location": "Austin, Tx",
+        "description": "Help craft the next generation of capabilities leveraging Apple location and spatial awareness technologies. Our team focuses are innovating, building, and productizing new ways for our devices to be spatially aware of each other, coupling different sensing technologies with sophisticated algorithms and AI/ML to enable new and more intuitive forms of interaction. This role is for a strong and experienced software generalist to help architect and develop software at the daemon and framework level — someone who thinks carefully about architectural decisions, is disciplined and dedicated to doing it right the first time, and is passionate about continuing a culture of software excellence in both developmental and production software.",
+        "salary": "130000",
+        "benefits": "Comprehensive medical and dental coverage, retirement benefits, range of discounted products and free services, and for formal education related to advance your career at Apple",
+        "user_id": 1
+    },
+    {
+        "name": "Lifecycle Marketing Manager",
+        "location": "New York, NY",
+        "description": "At Apple, new ideas have a way of becoming extraordinary products, services, and customer experiences very quickly. Bring passion and dedication to your job and there's no telling what you could accomplish. Apple's Commercial Marketing team is seeking a Lifecycle Marketing Manager to support the strategy development and execution of marketing campaigns and hero product programs within Apple Retail - across apple.com, in the Apple Store app, and in over 500 stores globally.",
+        "salary": "135000",
+        "benefits": "Comprehensive medical and dental coverage, retirement benefits, range of discounted products and free services, and for formal education related to advance your career at Apple",
+        "user_id": 1
+    },
+    {
+        "name": "AI Research Scientist",
+        "location": "Menlo Park, CA",
+        "description": "Meta is seeking a Research Scientist to join our productionization of AI Research Team, a research-to-production organization focused on making significant progress in AI and being a bridge between AI research and Meta Platforms products. Individuals in this role are expected to be recognized experts in computer vision. Develop algorithms and models based on state-of-the-art computer vision and machine learning advancements in the areas of generative AI. Contribute to research to production efforts that advance Meta Platform products",
+        "salary": "116000",
+        "benefits": "401K, stockshares, medical and dental",
+        "user_id": 3
+    },
+    {
+        "name": "Software Engineer Machine Learning",
+        "location": "Palo Alto, CA",
+        "description": "Meta is seeking AI Software Engineers to join our Research & Development teams. The ideal candidate will have industry experience working on Language related topics. The position will involve taking these skills and applying them to solve for some of the most crucial & exciting problems that exist on the web. Apply relevant AI and machine learning techniques to build intelligent rich language systems that improve Meta's products and experiences. Develop custom/novel architectures, define use cases, and develop methodology & benchmarks to evaluate different approaches. Apply in-depth knowledge of how the machine learning system interacts with the other systems around it.",
+        "salary": "190000",
+        "benefits": "401K, stockshares, medical and dental",
+        "user_id": 3
+    },
+    {
+        "name": "Cloud Data Engineer",
+        "location": "Mountain View, CA",
+        "description": "Work on data migrations and transformational projects, and with customers to design large-scale data processing systems, develop data pipelines optimized for scaling, and troubleshoot potential platform challenges. Work with Google's most strategic Cloud customers, and with the team, you will support customer implementation of Google Cloud products. Create and deliver best practices recommendations, tutorials, blog articles, sample code, and technical presentations adapting to different levels of key business and technical stakeholders.",
+        "salary": "147000",
+        "benefits": "Bonus, Equity, 401K, stockshares, medical and dental",
+        "user_id": 2
+    },
+    {
+        "name": "Data Analytics Sales Specialist",
+        "location": "Remote",
+        "description": "Generate a plan to ensure Data Analytics into Google Cloud Public Sector accounts. Manage Data Analytics workloads in existing Google Cloud Public Sector accounts, and accelerate Data Analytics consumption for key accounts with ramping spend. Build and maintain executive relationships with customers as the Data Analytics subject matter expert, influence long-term strategic direction, and act as a trusted advisor. Develop business strategies to be successful at accelerating agreement cycles in a market environment.",
+        "salary": "166000",
+        "benefits": "Bonus, Equity, 401K, stockshares, medical and dental",
+        "user_id": 2
+    },
+    {
+        "name": "Client Account Manager - Financial Services",
+        "location": "Chicago, IL",
+        "description": "Become a true Twitter expert and use your knowledge to simplify the platform and innovate to create solutions for clients. Collaborate with Fortune 500 Financial Services advertisers to understand their objectives, consult on social strategy, recommend best practices, and develop campaigns that drive measurable business results. By helping clients find their voice and build connections with their customers through relevant and timely campaigns on Twitter, you're shaping their participation in the public conversation. In partnership with your Client Partner, identify, create and implement marketing solutions that will drive measurable business results for your clients",
+        "salary": "111000",
+        "benefits": "Medical, Dental, and Vision Insurance. 401k with employer match, generous time off for vacation, sick time, and parental leave",
+        "user_id": 4
+    },
+    {
+        "name": "iOS Engineer",
+        "location": "San Francisco, CA",
+        "description": "Work at all layers of the iOS stack. Work with cross-functional partners in Engineering, Product Management, Design and Research across Twitter to plan, implement, and validate solutions to user problems while pushing the Twitter for iOS experience towards the future. Proactively identify improvements to our product's UX/UI and our codebase to enable us to stay ahead of the curve of the constantly evolving iOS development ecosystem. Enable effective collaboration, high velocity execution and technical excellence within the team. Lead by example in terms of best engineering practices including writing engineering architecture/design documents, checking in, and reviewing maintainable and extensible code with high-quality tests and documentation. Provide technical mentorship and coaching to our technical leads.",
+        "salary": "212000",
+        "benefits": "Bonus, Equity, 401K, stockshares, medical and dental",
+        "user_id": 4
+    },
+    {
+        "name": "Tax Analyst",
+        "location": "Remote",
+        "description": "Netflix is seeking an International Tax Analyst or Senior Analyst, reporting to the International Tax Director to join our international tax team to provide international tax planning, operations, and business support for our business, with a focus in our IP and distribution structure. The ideal candidate will have strong tax technical skills with respect to international income tax concepts relating to global operating structures, and is able to apply and communicate tax concepts to individuals both within and external to the tax functions. Assisting with the design and implementation of tax planning projects. Researching tax issues and preparing technical documentation. Providing tax operations and accounting support to cross-functional teams. Assisting on special projects and engaging with the broader accounting and finance organization.",
+        "salary": "130000",
+        "benefits": "Bonus, Equity, 401K, stockshares, medical and dental",
+        "user_id": 5
+    },
+    {
+        "name": "Data Center Engineering Manager",
+        "location": "Seattle, WA",
+        "description": "Microsoft's Cloud Operations & Innovation (CO+I) is the engine that powers our cloud services. As a CO+I DCT Manager, you will perform a key role in delivering the core infrastructure and foundational technologies for Microsoft's online services including Bing, Office 365, Xbox, OneDrive, and the Microsoft Azure platform. As a group, CO+I is focused on the personal and professional development for all employees and offers trainings and growth opportunities including Career Rotation Programs, Diversity & Inclusion trainings and events, and professional certifications. With environmental sustainability and optimization at the forefront of our datacenter design and operations, we continue to grow and evolve as we meet the ever-changing business demands that hold Microsoft as a world-class cloud provider.",
+        "salary": "129500",
+        "benefits": "Bonus, Equity, 401K, stockshares, medical and dental",
+        "user_id": 6
+    }
+]

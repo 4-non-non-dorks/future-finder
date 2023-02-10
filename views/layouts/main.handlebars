@@ -25,11 +25,15 @@
               >
                 home
               </span></a><span class="tooltiptext">Tooltip text</span></button>
-          <button><span class='material-symbols-rounded text-white text-4xl'>
+          <button id="search-btn"><span class='material-symbols-rounded text-white text-4xl'>
               search
             </span></button>
-          <button><span class='material-symbols-rounded text-white text-4xl'>
-              tune
+            <form id="search-form">
+            <input id="search-input" class="text-[#114B5F]" type="text">
+            <button id="submit-btn">Submit</button>
+            </form>
+          <button id="filter-btn"><span class='material-symbols-rounded text-white text-4xl'>
+              filter
             </span></button>
           {{#if logged_in}}
             <a href='/profile'><span
@@ -63,5 +67,5 @@
       <script src='/js/logout.js'></script>
     {{/if}}
   </body>
-
+<script src="/js/main.js"></script>
 </html>
