@@ -35,10 +35,6 @@ User.init(
         len: [8],
       },
     },
-    // employer: {
-    //   type: DataTypes.BOOLEAN,
-    //   allowNull: true,
-    // },
     company_name: {
       type: DataTypes.STRING,
     }

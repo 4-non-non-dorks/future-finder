@@ -1,7 +1,9 @@
 <div class="row">
   <div class="col-auto">
     <h2>Welcome, {{name}}!</h2>
+    {{#if company_name}}
     <a href="/createjob">Create</a>
+    {{/if}}
   </div>
 </div>
   {{#if jobs.length}}
