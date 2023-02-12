@@ -17,7 +17,7 @@ label {
 button span {
   pointer-events: none;
 }
-button:hover span {
+button:hover .span {
   color: #ea3232;
 }
 
