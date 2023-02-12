@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Job } = require('../../models');
+const { Job, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // route api/jobs
@@ -31,8 +31,20 @@ router.get('/', async (req, res) => {
 
 router.get('/:id', async (req, res) => {
   try {
-    const jobData = await Job.findByPk(req.params.id, {});
-    res.status(200).json(jobData);
+    const jobData = await Job.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['company_name'],
+          where: {
+            id: req.session.user_id,
+          },
+        },
+      ],
+    });
+    let jobDetails = jobData.get({ plain: true });
+
+    res.status(200).json(jobDetails);
   } catch (err) {
     res.status(400).json(err);
   }

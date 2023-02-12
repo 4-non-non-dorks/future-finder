@@ -18,8 +18,8 @@
       <p class='apple'>{{benefits}}</p>
       <h2 class='apple font-bold text-lg text-[#114B5F]'>Date Posted</h2>
       <p class='apple'>{{format_date date_created}}</p>
-      {{#if company_name}}
-      <button></button>
+      {{#if user.company_name}}
+      <p>No button</p>
       {{else}}
       <button id="bookmark"><span class="material-symbols-rounded text-4xl">
 star
