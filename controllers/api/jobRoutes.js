@@ -31,20 +31,8 @@ router.get('/', async (req, res) => {
 
 router.get('/:id', async (req, res) => {
   try {
-    const jobData = await Job.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ['company_name'],
-          where: {
-            id: req.session.user_id,
-          },
-        },
-      ],
-    });
-    let jobDetails = jobData.get({ plain: true });
-
-    res.status(200).json(jobDetails);
+    const jobData = await Job.findByPk(req.params.id, {});
+    res.status(200).json(jobData);
   } catch (err) {
     res.status(400).json(err);
   }

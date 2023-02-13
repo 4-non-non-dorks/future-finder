@@ -58,18 +58,12 @@ router.get('/jobs/:id', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['company_name'],
-          where: {
-            id: req.session.user_id,
-          },
+          attributes: ['name', 'company_name'],
         },
       ],
     });
 
     const job = jobData.get({ plain: true });
-
-    // job.company_name = userData.company_name;
-    console.log(job);
 
     res.render('jobs', {
       ...job,
