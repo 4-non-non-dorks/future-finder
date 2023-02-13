@@ -21,13 +21,6 @@ button:hover .span {
   color: #ea3232;
 }
 
-form,
-button {
-  display: inline-block;
-  margin: 0;
-  vertical-align: middle;
-}
-
 #search-input {
   width: 0px;
   background-color: white;
