@@ -30,7 +30,7 @@ button {
 
 input[type='text'] {
   width: 0px;
-  background-color: rgb(235, 235, 235);
+  background-color: white;
   padding: 0;
   transition: all 0.5s ease-in-out;
 }
