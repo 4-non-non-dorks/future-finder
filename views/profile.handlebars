@@ -1,30 +1,39 @@
 <div class="row">
   <div class="col-auto">
-    <h2>Welcome, {{name}}!</h2>
-    {{#if company_name}}
-    <a href="/createjob">Create</a>
-    {{/if}}
+    <h2 class="fancy text-4xl py-5 pl-5 text-[#88D498] mt-2"><span class="bg-white px-3 py-2 rounded-xl">Welcome, {{name}}!</span></h2>
   </div>
 </div>
   {{#if jobs.length}}
   <div class="">
-    <h3>Current Jobs:</h3>
+    <h3 class="text-center text-3xl fancy text-[#88D498] py-3">Your Jobs</h3>
 <div class='w-full h-auto flex flex-wrap justify-center'>
   {{#each jobs as |job|}}
   <a href="/jobs/{{job.id}}">
     <div
       class='border-2 border-[#114B5F] rounded-lg p-8 m-4 bg-gradient-to-b from-white to-green-200 to-[#88D498] h-52 w-52 transition ease-in-out hover:scale-110 duration-300'>
-      <h1 class='text-[#114B5F] font-bold text-3xl text-center fancy'>{{job.name}}</h1>
-      <h2 class='text-[#114B5F] font-bold text-lg text-center'>{{job.user.company_name}}</h2>
-      <h2 class='text-[#114B5F] font-bold text-lg text-center mt-2'>{{format_date job.date_created}}</h2>
+      <h1 class='text-[#114B5F] font-bold text-xl text-center fancy'>{{job.name}}</h1>
+      <h2 class='text-[#114B5F] font-bold text-md text-center'>{{job.user.company_name}}</h2>
+      <h2 class='text-[#114B5F] font-bold text-md text-center mt-2'>{{format_date job.date_created}}</h2>
+      <div class="text-center pt-7">
+          <button class="btn btn-sm btn-danger delete-btn" data-id="{{job.id}}"><span class="material-symbols-rounded text-3xl span">
+delete
+</span></button>
+        </div>
     </div>
   </a>
-        <div class="col-md-4">
-          <button id="delete-btn" class="btn btn-sm btn-danger" data-id="{{job.id}}">DELETE</button>
-        </div>
+        
   {{/each}}
 </div>
   {{/if}}
+  {{#if company_name}}
+  <div class="text-center fixed border-2 border-[#114B5F] bottom-0 w-full py-4 text-3xl fancy bg-[#88D498] text-[#114B5F]">
+    <button>
+    <a href="/createjob">Create</a>
+    </button>
+  </div>
+  {{else}}
+  <p>Let's find your future!</p>
+    {{/if}}
 </div>
 
 <script src="./js/profile.js"></script>

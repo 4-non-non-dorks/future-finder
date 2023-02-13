@@ -18,7 +18,7 @@
         <h1 class='pl-5'>
           <a id='header' href='/'>Future Finder!</a>
         </h1>
-        <nav class='px-7 mt-4'>
+        <nav class=' flex justify-between px-7 items-center'>
           <!-- Conditionally render login or logout links -->
           <button class="tooltip">
             <a href='/'><span
@@ -26,18 +26,17 @@
                 home
               </span>
               </a>
-              <span class="tooltiptext">Tooltip text</span>
+              <span class="tooltiptext">Home</span>
               </button>
-          <button id="search-btn"><span class='material-symbols-rounded text-white text-4xl'>
+            <form id="search-form" class="overflow-hidden border-0 outline-0 flex">
+            <input id="search-input" class="text-[#114B5F]" type="text" placeholder="Job Title">
+            <button id="submit-btn" type="submit"><span class='material-symbols-rounded text-white text-4xl'>
               search
             </span></button>
-            <form id="search-form">
-            <input id="search-input" class="text-[#114B5F]" type="text">
-            <button id="submit-btn">Submit</button>
             </form>
-          <button id="filter-btn"><span class='material-symbols-rounded text-white text-4xl'>
-              filter
-            </span></button>
+          <button id="filter-btn"><span class="material-symbols-rounded text-white text-4xl">
+tune
+</span></button>
           {{#if logged_in}}
             <a href='/profile'><span
                 class='material-symbols-rounded text-white text-4xl'
