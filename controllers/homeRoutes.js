@@ -62,9 +62,8 @@ router.get('/jobs/:id', async (req, res) => {
         },
       ],
     });
-
     const job = jobData.get({ plain: true });
-
+    console.log(job);
     res.render('jobs', {
       ...job,
       logged_in: req.session.logged_in,

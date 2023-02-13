@@ -21,6 +21,18 @@ button:hover .span {
   color: #ea3232;
 }
 
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+form, button {
+  display: inline-block;
+  margin: 0;
+  vertical-align: middle;
+}
+
 .form-input {
   display: block;
   height: 50px;
@@ -84,7 +96,7 @@ button:hover .span {
 /* Tooltip text */
 .tooltip .tooltiptext {
   visibility: hidden;
-  width: 120px;
+  width: 100px;
   background-color: black;
   color: #fff;
   text-align: center;
@@ -94,8 +106,8 @@ button:hover .span {
   /* Position the tooltip text - see examples below! */
   position: absolute;
   z-index: 1;
-  bottom: 100%;
-  left: 50%;
+  top: 100%;
+  right: -100%;
   margin-left: -60px;
 }
 
