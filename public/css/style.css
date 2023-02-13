@@ -21,10 +21,29 @@ button:hover .span {
   color: #ea3232;
 }
 
-form, button {
+form,
+button {
   display: inline-block;
   margin: 0;
   vertical-align: middle;
+}
+
+input[type='text'] {
+  width: 0px;
+  background-color: rgb(235, 235, 235);
+  padding: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+input[type='submit'] {
+  height: 100%;
+  width: max-content;
+  padding: 0 10px;
+}
+
+#search-form:hover input[type='text'] {
+  width: 200px;
+  padding: 0 10px;
 }
 
 .form-input {
