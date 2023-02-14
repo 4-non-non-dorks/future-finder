@@ -21,6 +21,7 @@ function getCookie(name) {
   return null;
 }
 
+// put dup check here and disable button
 // function checkBookmark() {
 //   let x = getCookie('ppkcookie');
 //   console.log('x', x);
@@ -39,21 +40,22 @@ let saveBookmark = async () => {
   let x = getCookie('ppkcookie');
 
   if (x !== null) {
-    bookmarks.push(x.split(','));
+    bookmarks.push(x);
   }
   console.log(bookmarks);
   //   // Checks if the bookmark ID is already in cookie
   function isBookmarkDuplicate(bookmark) {
+    let selectedBookmark = document
+      .querySelector('#job-title')
+      .getAttribute('data-id');
     for (let i = 0; i < bookmarks.length; i++) {
       console.log(bookmarks[i]);
-      if (
-        bookmarks[i] ===
-        document.querySelector('#job-title').getAttribute('data-id')
-      ) {
+      console.log(selectedBookmark);
+      if (bookmarks[i] == selectedBookmark) {
         return true;
       }
+      return false;
     }
-    return false;
   }
   console.log(isBookmarkDuplicate());
 
@@ -84,6 +86,7 @@ let saveBookmark = async () => {
     );
     setCookie('ppkcookie', bookmarks, 7);
   }
+  console.log(bookmarks);
 };
 
 // checkBookmark();
