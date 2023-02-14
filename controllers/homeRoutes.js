@@ -66,6 +66,7 @@ router.get('/jobs/:id', async (req, res) => {
     console.log(job);
     res.render('jobs', {
       ...job,
+      company_name: req.session.company_name,
       logged_in: req.session.logged_in,
     });
   } catch (err) {

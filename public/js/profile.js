@@ -19,3 +19,7 @@ let deleteBtnEl = document.querySelectorAll('.delete-btn');
 for (let i = 0; i < deleteBtnEl.length; i++) {
   deleteBtnEl[i].addEventListener('click', delButtonHandler);
 }
+ 
+// make fetch to api route (/api/jobs/bookmarks)
+// return JSON of all bookmarks 
+// loop through bookmarks and link them to jobs

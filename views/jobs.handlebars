@@ -1,6 +1,6 @@
 <div class=''>
   <div class='flex flex-col text-center'>
-    <h1 class='fancy text-3xl m-5 text-[#114B5F]'>{{name}}</h1>
+    <h1 data-id="{{id}}" id="job-title" class='fancy text-3xl m-5 text-[#114B5F]'>{{name}}</h1>
     <p class='apple text-xl font-bold text-[#114B5F]'>{{user.company_name}}</p>
     <p class='apple mt-1 text-xl font-bold text-[#114B5F]'>{{location}}</p>
   </div>
@@ -18,18 +18,18 @@
       <p class='apple'>{{benefits}}</p>
       <h2 class='apple font-bold text-lg text-[#114B5F]'>Date Posted</h2>
       <p class='apple'>{{format_date date_created}}</p>
-      {{#if user.company_name}}
-      <p>No button</p>
-      {{else}}
+      {{#unless company_name}}
       <button id="bookmark"><span class="material-symbols-rounded text-4xl">
 star
 </span></button>
-{{/if}}
+{{/unless}}
     </div>
   </div>
-  {{! <div class="flex flex-col text-center mt-5">
+  {{#unless company_name}}
+  <div class="flex flex-col text-center mt-5">
     <button class='fancy text-3xl m-5 text-[#114B5F]'>Apply Now</button>
-  </div> }}
-
   </div>
+{{/unless}}
+  </div>
+  <script src="/js/jobs.js"></script>
 </div>

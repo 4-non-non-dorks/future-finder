@@ -29,6 +29,15 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/bookmarks', async (req, res) => {
+  try {
+    const newJob = await Job.findAll();
+    res.status(200).json(newJob);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
 router.get('/:id', async (req, res) => {
   try {
     const jobData = await Job.findByPk(req.params.id, {});
