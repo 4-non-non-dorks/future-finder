@@ -47,6 +47,39 @@ router.post('/applications', async (req, res) => {
   }
 });
 
+router.get('/applications', async (req, res) => {
+  try {
+    const newApp = await Application.findAll({
+      where: {
+        user_id: req.session.user_id,
+      },
+    });
+    res.status(200).json(newApp);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+router.post('/applied', async (req, res) => {
+  try {
+    console.log('body', req.body);
+    const newJob = await Job.findAll({
+      where: {
+        id: req.body.job_id,
+      },
+      include: [
+        {
+          model: User,
+          attributes: ['company_name'],
+        },
+      ],
+    });
+    res.status(200).json(newJob);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
 router.post('/bookmarks', async (req, res) => {
   try {
     console.log('body', req.body);
