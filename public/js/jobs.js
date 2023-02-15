@@ -21,73 +21,33 @@ function getCookie(name) {
   return null;
 }
 
-// put dup check here and disable button
-// function checkBookmark() {
-//   let x = getCookie('ppkcookie');
-//   console.log('x', x);
-//   console.log(x.split(','));
-
-//   let bookmarks = x.split(',');
-
-//   if (bookmarks.indexOf('1') > -1) {
-//     alert('bookmark works');
-//   }
-// }
-
 let saveBookmark = async () => {
   bookMarkEl.classList.toggle('text-amber-500');
   let bookmarks = [];
-  let x = getCookie('ppkcookie');
+  let x = getCookie('ppkcookie') || '';
+  if (x !== '') {
+    bookmarks = x.split(',');
+  }
 
-  if (x !== null) {
-    bookmarks.push(x);
-  }
-  console.log(bookmarks);
-  //   // Checks if the bookmark ID is already in cookie
-  function isBookmarkDuplicate(bookmark) {
-    let selectedBookmark = document
-      .querySelector('#job-title')
-      .getAttribute('data-id');
-    for (let i = 0; i < bookmarks.length; i++) {
-      console.log(bookmarks[i]);
-      console.log(selectedBookmark);
-      if (bookmarks[i] == selectedBookmark) {
-        return true;
-      }
-      return false;
-    }
-  }
-  console.log(isBookmarkDuplicate());
+  let selectedBookmark = document
+    .querySelector('#job-title')
+    .getAttribute('data-id');
 
-  //   // Removes the bookmark if the ID is the same
-  function removeBookmark(bookmark) {
-    for (let i = 0; i < bookmarks.length; i++) {
-      if (
-        bookmarks[i] ===
-        document.querySelector('#job-title').getAttribute('data-id')
-      ) {
-        let index = bookmarks.indexOf(bookmarks[i]);
-        bookmarks.splice(index, 1);
-      }
-    }
-  }
-  //   // Checks if the bookmark is a duplicate, if so, it will remove the bookmark, else it will add it to local storage
-  if (
-    isBookmarkDuplicate(
-      document.querySelector('#job-title').getAttribute('data-id')
-    )
-  ) {
-    removeBookmark(
-      document.querySelector('#job-title').getAttribute('data-id')
-    );
+  const index = bookmarks.indexOf(selectedBookmark);
+  if (index > -1) {
+    bookmarks.splice(index, 1);
   } else {
-    bookmarks.push(
-      document.querySelector('#job-title').getAttribute('data-id')
-    );
-    setCookie('ppkcookie', bookmarks, 7);
+    bookmarks.push(selectedBookmark);
   }
-  console.log(bookmarks);
+  setCookie('ppkcookie', bookmarks.toString(), 7);
 };
 
-// checkBookmark();
+// function isHighlighted() {
+//   for (let i = 0; i < bookmarks.length; i++) {
+//     if (selectedBookmark === bookmarks[i]) {
+//       bookMarkEl.classList.add('text-amber-500');
+//     }
+//   }
+// }
+
 bookMarkEl.addEventListener('click', saveBookmark);

@@ -1,3 +1,5 @@
+let bookmarkDiv = document.querySelector('#bookmarks');
+
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
@@ -19,7 +21,47 @@ let deleteBtnEl = document.querySelectorAll('.delete-btn');
 for (let i = 0; i < deleteBtnEl.length; i++) {
   deleteBtnEl[i].addEventListener('click', delButtonHandler);
 }
- 
-// make fetch to api route (/api/jobs/bookmarks)
-// return JSON of all bookmarks 
-// loop through bookmarks and link them to jobs
+
+function getCookie(name) {
+  let nameEQ = name + '=';
+  let ca = document.cookie.split(';');
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+  }
+  return null;
+}
+
+let x = getCookie('ppkcookie') || '';
+let cookie = [];
+if (x !== '') {
+  cookie = x.split(',');
+}
+
+fetch(`/api/jobs/bookmarks`, {
+  method: 'POST',
+  headers: {
+    Accept: 'application/json',
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({
+    bookmarks: cookie,
+  }),
+})
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    console.log(data);
+    //loop through data and put in bookmark div in profile
+    for (let i = 0; i < data.length; i++) {
+      bookmarkDiv.innerHTML += `<a href="/jobs/${data[i].id}"> <div
+      class='border-2 border-[#114B5F] rounded-lg p-8 m-4 bg-gradient-to-b from-white to-green-200 to-[#88D498] h-52 w-52 transition ease-in-out hover:scale-110 duration-300'>
+      <h1 class='text-[#114B5F] font-bold text-xl text-center fancy'>${data[i].name}</h1>
+      <h2 class='text-[#114B5F] font-bold text-md text-center'>${data[i].user.company_name}</h2>
+      <div class="text-center pt-7"> </a>`;
+    }
+  });
+
+

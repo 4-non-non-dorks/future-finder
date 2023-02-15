@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Job, User } = require('../../models');
 const withAuth = require('../../utils/auth');
+const { Op } = require('sequelize');
 
 // route api/jobs
 
@@ -29,9 +30,20 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/bookmarks', async (req, res) => {
+router.post('/bookmarks', async (req, res) => {
   try {
-    const newJob = await Job.findAll();
+    console.log('body', req.body);
+    const newJob = await Job.findAll({
+      where: {
+        id: { [Op.in]: req.body.bookmarks },
+      },
+      include: [
+        {
+          model: User,
+          attributes: ['company_name'],
+        },
+      ],
+    });
     res.status(200).json(newJob);
   } catch (err) {
     res.status(400).json(err);
