@@ -18,40 +18,57 @@
         <h1 class='pl-5'>
           <a id='header' href='/'>Future Finder!</a>
         </h1>
-        <nav class=' flex justify-between px-7 items-center'>
+        <nav class='flex justify-between px-9 items-center'>
           <!-- Conditionally render login or logout links -->
-          <button class="tooltip">
+          <button class='tooltip'>
             <a href='/'><span
-                class='material-symbols-rounded text-white text-4xl'>
+                class='material-symbols-rounded text-white text-4xl'
+              >
                 home
               </span>
-              </a>
-              <span class="tooltiptext">Home</span>
-              </button>
-            <form id="search-form" class="overflow-hidden border-0 outline-0 flex inline-block m-0">
-            <input id="search-input" class="text-[#114B5F]" type="text" placeholder="Job Title">
-            <button id="submit-btn" type="submit"><span class='material-symbols-rounded text-white text-4xl align-middle'>
-              search
+            </a>
+            <span class='tooltiptext'>Home</span>
+          </button>
+          <form
+            id='search-form'
+            class='overflow-hidden border-0 outline-0 flex inline-block m-0'
+          >
+            <input
+              id='search-input'
+              class='text-[#114B5F]'
+              type='text'
+              placeholder='Job Title'
+            />
+            <button id='submit-btn' class='tooltip' type='submit'><span
+                class='material-symbols-rounded text-white text-4xl align-middle'
+              >
+                search
+              </span></button>
+          </form>
+          <button id='filter-btn' class="px-2"><span
+              class='material-symbols-rounded text-white text-4xl'
+            >
+              tune
             </span></button>
-            </form>
-          <button id="filter-btn"><span class="material-symbols-rounded text-white text-4xl">
-tune
-</span></button>
           {{#if logged_in}}
-            <a href='/profile'><span
+            <a href='/profile' class='tooltip px-2'><span
                 class='material-symbols-rounded text-white text-4xl'
               >
                 account_circle
-              </span></a>
-            <button class='' id='logout'><span
+              </span>
+              <span class='tooltiptext'>Profile</span></a>
+
+            <button class='tooltip px-2' id='logout'><span
                 class='material-symbols-rounded text-white text-4xl'
-              >logout</span></button>
+              >logout</span>
+              <span class='tooltiptext'>Log Out</span></button>
           {{else}}
-            <a href='/login'><span
+            <a href='/login' class="tooltip px-2"><span
                 class='material-symbols-rounded text-white text-4xl'
               >
                 login
-              </span></a>
+              </span>
+              <span class='tooltiptext'>Login</span></a>
           {{/if}}
         </nav>
       </header>
@@ -69,5 +86,5 @@ tune
       <script src='/js/logout.js'></script>
     {{/if}}
   </body>
-<script src="/js/main.js"></script>
+  <script src='/js/main.js'></script>
 </html>

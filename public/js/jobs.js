@@ -45,6 +45,18 @@ let saveBookmark = async () => {
     bookmarks.push(selectedBookmark);
   }
   setCookie('ppkcookie', bookmarks.toString(), 7);
+
+  function showToast() {
+    let toast = document.getElementById('toast');
+
+    toast.className = 'show';
+
+    setTimeout(function () {
+      toast.className = toast.className.replace('show', '');
+    }, 3000);
+  }
+
+  showToast();
 };
 
 function revealModal() {
@@ -55,6 +67,16 @@ function revealModal() {
 function closeModal() {
   modalDiv.classList.add('hidden');
   overlayDiv.classList.add('hidden');
+}
+
+function myFunction() {
+  let toast = document.getElementById('snackbar');
+
+  toast.className = 'show';
+
+  setTimeout(function () {
+    toast.className = toast.className.replace('show', '');
+  }, 3000);
 }
 
 const handleSubmitApplication = async (event) => {
@@ -98,6 +120,7 @@ const handleSubmitApplication = async (event) => {
     console.log(response);
     if (response.ok) {
       closeModal();
+      myFunction();
       first_nameEl.value = '';
       last_nameEl.value = '';
       emailEl.value = '';
