@@ -1,4 +1,5 @@
 let bookmarkDiv = document.querySelector('#bookmarks');
+let appliedDiv = document.querySelector('#applied');
 
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
@@ -53,7 +54,6 @@ fetch(`/api/jobs/bookmarks`, {
     return response.json();
   })
   .then(function (data) {
-    console.log(data);
     //loop through data and put in bookmark div in profile
     for (let i = 0; i < data.length; i++) {
       bookmarkDiv.innerHTML += `<a href="/jobs/${data[i].id}"> <div
@@ -64,4 +64,45 @@ fetch(`/api/jobs/bookmarks`, {
     }
   });
 
+function handleAppliedDisplay() {
+  fetch(`/api/jobs/applications`, {
+    method: 'GET',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
+  })
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+      for (let i = 0; i < data.length; i++) {
+        fetch(`/api/jobs/applied`, {
+          method: 'POST',
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            job_id: `${data[i].job_id}`,
+          }),
+        })
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (jobs) {
+            console.log(jobs);
+            for (let i = 0; i < jobs.length; i++) {
+              appliedDiv.innerHTML += `<a href="/jobs/${jobs[i].id}"> <div
+      class='border-2 border-[#114B5F] rounded-lg p-8 m-4 bg-gradient-to-b from-white to-green-200 to-[#88D498] h-52 w-52 transition ease-in-out hover:scale-110 duration-300'>
+      <h1 class='text-[#114B5F] font-bold text-xl text-center fancy'>${jobs[i].name}</h1>
+      <h2 class='text-[#114B5F] font-bold text-md text-center'>${jobs[i].user.company_name}</h2>
+      <div class="text-center pt-7"> </a>`;
+            }
+          });
+      }
+    });
+}
 
+handleAppliedDisplay();
