@@ -1,4 +1,9 @@
 const bookMarkEl = document.querySelector('#bookmark');
+const applyBtn = document.querySelector('#apply-btn');
+const modalDiv = document.querySelector('#modal-div');
+const closeBtn = document.querySelector('#close-btn');
+const overlayDiv = document.querySelector('#overlay-div');
+const submitForm = document.querySelector('#submit-form');
 
 function setCookie(name, value, days) {
   let expires = '';
@@ -42,6 +47,67 @@ let saveBookmark = async () => {
   setCookie('ppkcookie', bookmarks.toString(), 7);
 };
 
+function revealModal() {
+  modalDiv.classList.remove('hidden');
+  overlayDiv.classList.remove('hidden');
+}
+
+function closeModal() {
+  modalDiv.classList.add('hidden');
+  overlayDiv.classList.add('hidden');
+}
+
+const handleSubmitApplication = async (event) => {
+  event.preventDefault();
+
+  let first_nameEl = document.querySelector('#first-name');
+  let last_nameEl = document.querySelector('#last-name');
+  let emailEl = document.querySelector('#email');
+  let street_addressEl = document.querySelector('#street-address');
+  let phone_numberEl = document.querySelector('#phone-number');
+
+  const first_name = document.querySelector('#first-name').value.trim();
+  const last_name = document.querySelector('#last-name').value.trim();
+  const email = document.querySelector('#email').value.trim();
+  const street_address = document.querySelector('#street-address').value.trim();
+  const phone_number = document.querySelector('#phone-number').value.trim();
+  const job_id = document.querySelector('#job-title').getAttribute('data-id');
+
+  if (
+    first_name &&
+    last_name &&
+    email &&
+    street_address &&
+    phone_number &&
+    job_id
+  ) {
+    const response = await fetch(`/api/jobs/applications`, {
+      method: 'POST',
+      body: JSON.stringify({
+        first_name,
+        last_name,
+        email,
+        street_address,
+        phone_number,
+        job_id,
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    console.log(response);
+    if (response.ok) {
+      closeModal();
+      first_nameEl.value = '';
+      last_nameEl.value = '';
+      emailEl.value = '';
+      street_addressEl.value = '';
+      phone_numberEl.value = '';
+    } else {
+      alert('Failed to create application');
+    }
+  }
+};
 // function isHighlighted() {
 //   for (let i = 0; i < bookmarks.length; i++) {
 //     if (selectedBookmark === bookmarks[i]) {
@@ -51,3 +117,6 @@ let saveBookmark = async () => {
 // }
 
 bookMarkEl.addEventListener('click', saveBookmark);
+applyBtn.addEventListener('click', revealModal);
+closeBtn.addEventListener('click', closeModal);
+submitForm.addEventListener('click', handleSubmitApplication);

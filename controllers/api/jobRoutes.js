@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Job, User } = require('../../models');
+const { Job, User, Application } = require('../../models');
 const withAuth = require('../../utils/auth');
 const { Op } = require('sequelize');
 
@@ -25,6 +25,23 @@ router.get('/', async (req, res) => {
   try {
     const newJob = await Job.findAll();
     res.status(200).json(newJob);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+router.post('/applications', async (req, res) => {
+  try {
+    const newApplication = await Application.create({
+      first_name: req.body.first_name,
+      last_name: req.body.last_name,
+      email: req.body.email,
+      street_address: req.body.street_address,
+      phone_number: req.body.phone_number,
+      user_id: req.session.user_id,
+      job_id: req.body.job_id,
+    });
+    res.status(200).json(newApplication);
   } catch (err) {
     res.status(400).json(err);
   }
