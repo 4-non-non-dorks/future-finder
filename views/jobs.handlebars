@@ -36,10 +36,16 @@ star
     <button class="close-modal" id="close-btn">&times;</button>
     <h1 class="text-center fancy  text-4xl text-[#114B5F]">Application Form</h1>
     <form class="modal-p">
-        <label for='first-name'>First Name:</label>
-        <input class='form-input rounded-xl' type='text' id='first-name' />
+      <div class="flex space-x-4">
+        <div class="w-1/2">
+          <label for='first-name'>First Name:</label>
+          <input class='form-input rounded-xl' type='text' id='first-name' />
+        </div>
+      <div class="w-1/2">
         <label for='last-name'>Last Name:</label>
-        <input class='form-input rounded-xl' type='text' id='last-name' />
+        <input class='form-input rounded-xl' type='text' id='last-name' />      
+       </div>
+      </div>
         <label for='email'>Email:</label>
         <input class='form-input rounded-xl' type='text' id='email' />
         <label for='street-address'>Street Address:</label>

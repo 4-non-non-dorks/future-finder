@@ -10,11 +10,11 @@
   {{#each jobs as |job|}}
   <a href="/jobs/{{job.id}}">
     <div
-      class='border-2 border-[#114B5F] rounded-lg p-8 m-4 bg-gradient-to-b from-white to-green-200 to-[#88D498] h-52 w-52 transition ease-in-out hover:scale-110 duration-300'>
+      class='border-2 border-[#114B5F] rounded-lg p-8 m-4 bg-gradient-to-b from-white to-green-200 to-[#88D498] h-56 w-56 transition ease-in-out hover:scale-110 duration-300'>
       <h1 class='text-[#114B5F] font-bold text-xl text-center fancy'>{{job.name}}</h1>
       <h2 class='text-[#114B5F] font-bold text-md text-center'>{{job.user.company_name}}</h2>
       <h2 class='text-[#114B5F] font-bold text-md text-center mt-2'>{{format_date job.date_created}}</h2>
-      <div class="text-center pt-7">
+      <div class="text-center pt-1">
           <button class="btn btn-sm btn-danger delete-btn" data-id="{{job.id}}"><span class="material-symbols-rounded text-3xl span">
 delete
 </span></button>
@@ -33,15 +33,18 @@ delete
   </div>
   {{else}}
   <p class="text-center fancy text-4xl text-[#114B5F] pb-2">Your Bookmarks!</p>
+
+  <div class="w-full h-auto flex flex-wrap justify-center" id="bookmarks"></div>
+
+  <div class="text-center fancy text-4xl text-[#114B5F] pb-2">Applied</div>
+
+  <div class="w-full h-auto flex flex-wrap justify-center" id="applied"></div>
+
     {{/if}}
 </div>
 
 
-<div class="w-full h-auto flex flex-wrap justify-center" id="bookmarks"></div>
 
-<div class="text-center fancy text-4xl text-[#114B5F] pb-2">Applied</div>
-
-<div class="w-full h-auto flex flex-wrap justify-center" id="applied"></div>
 
 
 <script src="./js/profile.js"></script>
