@@ -220,7 +220,7 @@ button:hover .span {
 
 .modal {
   position: absolute;
-  top: 65%;
+  top: 58%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 70%;

@@ -15,7 +15,7 @@
   <body class='bg-[#F3E9D2]'>
     <div>
       <header class='bg-[#88D498] flex lg:flex-row flex-col justify-between'>
-        <h1 class='pl-5'>
+        <h1 class='pl-5 min-[320px]:text-center'>
           <a id='header' href='/'>Future Finder!</a>
         </h1>
         <nav class='flex justify-between px-9 items-center'>
@@ -45,11 +45,6 @@
                 search
               </span></button>
           </form>
-          <button id='filter-btn' class="px-2"><span
-              class='material-symbols-rounded text-white text-4xl'
-            >
-              tune
-            </span></button>
           {{#if logged_in}}
             <a href='/profile' class='tooltip px-2'><span
                 class='material-symbols-rounded text-white text-4xl'
@@ -63,7 +58,7 @@
               >logout</span>
               <span class='tooltiptext'>Log Out</span></button>
           {{else}}
-            <a href='/login' class="tooltip px-2"><span
+            <a href='/login' class='tooltip'><span
                 class='material-symbols-rounded text-white text-4xl'
               >
                 login
