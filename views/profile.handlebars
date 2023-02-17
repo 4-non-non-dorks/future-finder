@@ -1,11 +1,15 @@
-<div class="row">
-  <div class="col-auto">
-    <h2 class="fancy text-4xl py-5 pl-5 text-[#88D498] my-2"><span class="bg-white px-3 py-2 rounded-xl">Welcome, {{name}}!</span></h2>
+<div>
+  <div class="inline-block">
+    {{#if company_name}}
+     <h2 class="fancy text-4xl py-5 pl-5 text-[#88D498] my-2 bg-white px-3 rounded-xl text-center">Welcome, {{name}} from {{company_name}}!</h2>
+    {{else}}
+    <h2 class="fancy text-4xl py-5 pl-5 text-[#88D498] my-2 bg-white px-3 rounded-xl text-center">Welcome, {{name}}!</h2>
+    {{/if}}
   </div>
 </div>
   {{#if jobs.length}}
   <div class="">
-    <h3 class="text-center text-3xl fancy text-[#88D498] py-3">Your Jobs</h3>
+    <h3 class="text-center text-3xl fancy text-[#114B5F] py-3">Your Jobs</h3>
 <div class='w-full h-auto flex flex-wrap justify-center'>
   {{#each jobs as |job|}}
   <a href="/jobs/{{job.id}}">
