@@ -20,15 +20,7 @@
         </h1>
         <nav class='flex justify-between px-9 items-center'>
           <!-- Conditionally render login or logout links -->
-          <button class='tooltip'>
-            <a href='/'><span
-                class='material-symbols-rounded text-white text-4xl'
-              >
-                home
-              </span>
-            </a>
-            <span class='tooltiptext'>Home</span>
-          </button>
+        
           <form
             id='search-form'
             class='overflow-hidden border-0 outline-0 flex inline-block m-0'
@@ -45,6 +37,13 @@
                 search
               </span></button>
           </form>
+          <button class='tooltip'>
+            <a href='/'><span class='material-symbols-rounded text-white text-4xl'>
+                home
+              </span>
+            </a>
+            <span class='tooltiptext'>Home</span>
+          </button>
           {{#if logged_in}}
             <a href='/profile' class='tooltip px-2'><span
                 class='material-symbols-rounded text-white text-4xl'

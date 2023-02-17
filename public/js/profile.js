@@ -1,5 +1,7 @@
 let bookmarkDiv = document.querySelector('#bookmarks');
 let appliedDiv = document.querySelector('#applied');
+let bookmarkTextEl = document.querySelector('#bookmark-text');
+let appliedTextEl = document.querySelector('#applied-text');
 
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
@@ -54,6 +56,9 @@ fetch(`/api/jobs/bookmarks`, {
     return response.json();
   })
   .then(function (data) {
+    if (data.length < 1) {
+      bookmarkTextEl.classList.remove('hidden');
+    }
     //loop through data and put in bookmark div in profile
     for (let i = 0; i < data.length; i++) {
       bookmarkDiv.innerHTML += `<a href="/jobs/${data[i].id}"> <div
@@ -77,6 +82,9 @@ function handleAppliedDisplay() {
     })
     .then(function (data) {
       console.log(data);
+      if (data.length < 1) {
+        appliedTextEl.classList.remove('hidden');
+      }
       for (let i = 0; i < data.length; i++) {
         fetch(`/api/jobs/applied`, {
           method: 'POST',

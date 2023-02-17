@@ -56,7 +56,21 @@ let saveBookmark = async () => {
     }, 3000);
   }
 
-  showToast();
+  function showRemoveToast() {
+    let toast = document.getElementById('toast-remove');
+
+    toast.className = 'show';
+
+    setTimeout(function () {
+      toast.className = toast.className.replace('show', '');
+    }, 3000);
+  }
+
+  if (bookMarkEl.classList.contains('text-amber-500')) {
+    showToast();
+  } else {
+    showRemoveToast();
+  }
 };
 
 function revealModal() {
@@ -127,17 +141,79 @@ const handleSubmitApplication = async (event) => {
       street_addressEl.value = '';
       phone_numberEl.value = '';
     } else {
-      alert('Failed to create application');
+      console.log('fail!');
+    }
+  } else {
+    if (first_nameEl.value === '') {
+      first_nameEl.classList.add('border-dashed', 'border-4', 'border-red-500');
+    } else if (first_nameEl.value !== '') {
+      first_nameEl.classList.remove(
+        'border-dashed',
+        'border-4',
+        'border-red-500'
+      );
+    }
+    if (last_nameEl.value === '') {
+      last_nameEl.classList.add('border-dashed', 'border-4', 'border-red-500');
+    } else if (last_nameEl.value !== '') {
+      last_nameEl.classList.remove(
+        'border-dashed',
+        'border-4',
+        'border-red-500'
+      );
+    }
+    if (emailEl.value === '') {
+      emailEl.classList.add('border-dashed', 'border-4', 'border-red-500');
+    } else if (emailEl.value !== '') {
+      emailEl.classList.remove('border-dashed', 'border-4', 'border-red-500');
+    }
+    if (street_addressEl.value === '') {
+      street_addressEl.classList.add(
+        'border-dashed',
+        'border-4',
+        'border-red-500'
+      );
+    } else if (street_addressEl.value !== '') {
+      street_addressEl.classList.remove(
+        'border-dashed',
+        'border-4',
+        'border-red-500'
+      );
+    }
+    if (phone_numberEl.value === '') {
+      phone_numberEl.classList.add(
+        'border-dashed',
+        'border-4',
+        'border-red-500'
+      );
+    } else if (phone_numberEl.value !== '') {
+      phone_numberEl.classList.remove(
+        'border-dashed',
+        'border-4',
+        'border-red-500'
+      );
     }
   }
 };
-// function isHighlighted() {
-//   for (let i = 0; i < bookmarks.length; i++) {
-//     if (selectedBookmark === bookmarks[i]) {
-//       bookMarkEl.classList.add('text-amber-500');
-//     }
-//   }
-// }
+function isHighlighted() {
+  let bookmarks = [];
+  let x = getCookie('ppkcookie') || '';
+  if (x !== '') {
+    bookmarks = x.split(',');
+  }
+
+  let selectedBookmark = document
+    .querySelector('#job-title')
+    .getAttribute('data-id');
+
+  for (let i = 0; i < bookmarks.length; i++) {
+    if (selectedBookmark === bookmarks[i]) {
+      bookMarkEl.classList.add('text-amber-500');
+    }
+  }
+}
+
+isHighlighted();
 
 bookMarkEl.addEventListener('click', saveBookmark);
 applyBtn.addEventListener('click', revealModal);

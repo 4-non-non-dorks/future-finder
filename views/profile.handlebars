@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-auto">
-    <h2 class="fancy text-4xl py-5 pl-5 text-[#88D498] mt-2"><span class="bg-white px-3 py-2 rounded-xl">Welcome, {{name}}!</span></h2>
+    <h2 class="fancy text-4xl py-5 pl-5 text-[#88D498] my-2"><span class="bg-white px-3 py-2 rounded-xl">Welcome, {{name}}!</span></h2>
   </div>
 </div>
   {{#if jobs.length}}
@@ -33,10 +33,13 @@ delete
   </div>
   {{else}}
   <p class="text-center fancy text-4xl text-[#114B5F] pb-2">Your Bookmarks!</p>
+  <p class="text-center fancy text-3xl text-[#1A936F] pb-2 my-10 hidden" id="bookmark-text">Your bookmarks will display here, get searching to Find your Future!</p>
+
 
   <div class="w-full h-auto flex flex-wrap justify-center" id="bookmarks"></div>
 
   <div class="text-center fancy text-4xl text-[#114B5F] pb-2">Applied</div>
+  <p class="text-center fancy text-3xl text-[#1A936F] pb-2 my-10 hidden" id="applied-text">After you submit an application, view your applied jobs here!</p>
 
   <div class="w-full h-auto flex flex-wrap justify-center" id="applied"></div>
 
