@@ -52,7 +52,7 @@ router.get('/jobs/search/', async (req, res) => {
   }
 });
 
-router.get('/jobs/:id', async (req, res) => {
+router.get('/jobs/:id', withAuth, async (req, res) => {
   try {
     const jobData = await Job.findByPk(req.params.id, {
       include: [
@@ -74,7 +74,7 @@ router.get('/jobs/:id', async (req, res) => {
   }
 });
 
-router.get('/profile', async (req, res) => {
+router.get('/profile', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
@@ -93,7 +93,7 @@ router.get('/profile', async (req, res) => {
   }
 });
 
-router.get('/createjob', async (req, res) => {
+router.get('/createjob', withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
