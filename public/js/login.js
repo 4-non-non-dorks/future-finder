@@ -2,6 +2,8 @@ const loginFormHandler = async (event) => {
   event.preventDefault();
 
   // Collect values from the login form
+  const emailEl = document.querySelector('#email-login');
+  const passwordEl = document.querySelector('#password-login');
   const email = document.querySelector('#email-login').value.trim();
   const password = document.querySelector('#password-login').value.trim();
 
@@ -19,11 +21,25 @@ const loginFormHandler = async (event) => {
     } else {
       alert(response.statusText);
     }
+  } else {
+    if (emailEl.value === '') {
+      emailEl.classList.add('border-dashed', 'border-4', 'border-red-500');
+    } else if (emailEl.value !== '') {
+      emailEl.classList.remove('border-dashed', 'border-4', 'border-red-500');
+    }
+    if (passwordEl.value === '') {
+      passwordEl.classList.add('border-dashed', 'border-4', 'border-red-500');
+    } else if (passwordEl.value !== '') {
+      passwordEl.classList.remove('border-dashed', 'border-4', 'border-red-500');
+    }
   }
 };
 
 const signupFormHandler = async (event) => {
   event.preventDefault();
+  const nameEl = document.querySelector('#name-signup');
+  const emailEl = document.querySelector('#email-signup');
+  const passwordEl = document.querySelector('#password-signup');
 
   const name = document.querySelector('#name-signup').value.trim();
   const company_name =
@@ -42,6 +58,22 @@ const signupFormHandler = async (event) => {
       document.location.replace('/profile');
     } else {
       alert(response.statusText);
+    }
+  } else {
+    if (nameEl.value === '') {
+      nameEl.classList.add('border-dashed', 'border-4', 'border-red-500');
+    } else if (nameEl.value !== '') {
+      nameEl.classList.remove('border-dashed', 'border-4', 'border-red-500');
+    }
+    if (emailEl.value === '') {
+      emailEl.classList.add('border-dashed', 'border-4', 'border-red-500');
+    } else if (emailEl.value !== '') {
+      emailEl.classList.remove('border-dashed', 'border-4', 'border-red-500');
+    }
+    if (passwordEl.value === '') {
+      passwordEl.classList.add('border-dashed', 'border-4', 'border-red-500');
+    } else if (passwordEl.value !== '') {
+      passwordEl.classList.remove('border-dashed', 'border-4', 'border-red-500');
     }
   }
 };
