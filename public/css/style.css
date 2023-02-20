@@ -39,7 +39,9 @@ button:hover .span {
   padding: 0 10px;
 }
 
-#toast, #toast-remove, #snackbar {
+#toast,
+#toast-remove,
+#snackbar {
   visibility: hidden;
   min-width: 250px;
   margin-left: -125px;
@@ -56,7 +58,9 @@ button:hover .span {
   font-size: larger;
 }
 
-#toast.show, #toast-remove.show, #snackbar.show {
+#toast.show,
+#toast-remove.show,
+#snackbar.show {
   visibility: visible;
 
   -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
@@ -122,6 +126,18 @@ button:hover .span {
 .form {
   height: 520px;
   width: 400px;
+}
+
+@media screen and (max-width: 450px) {
+  .form {
+    width: 320px;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .form {
+    width: 250px;
+  }
 }
 
 .btn-primary {
